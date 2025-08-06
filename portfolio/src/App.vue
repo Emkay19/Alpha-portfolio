@@ -9,6 +9,8 @@
 
     <div class="button">
       <Button class="contact">Contact</Button>
+      <Button class="project">Projects</Button>
+      <Button class="infoBtn">Info</Button>
     </div>
 
   </header>
@@ -19,21 +21,6 @@
       <h1>My Portfolio</h1>
     </div>
 
-    <section class="about">
-      <div class="bgImage">
-
-      </div>
-      <h2 class="aboutMe">About Me</h2>
-      <p class="abt">
-        "I am a passionate 2nd year student who is good at making figma projects and I can code a webisite from the
-        ground
-        up using vue, html and css"
-      </p>
-    </section>
-
-    <section class="projects">
-      <h2 class="myProjects">My Projects</h2>
-    </section>
   </div>
 
 
@@ -53,11 +40,10 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 500px;
+  height: 600px;
   z-index: 0;
   border-radius: 40px;
   padding-top: 30px;
-  margin-top: 50px;
 }
 
 header {
@@ -79,7 +65,31 @@ header {
 }
 
 .contact {
-  margin-left: 90%;
+  margin-left: 60%;
+  margin-top: -50px;
+  text-align: center;
+  width: 110px;
+  height: 45px;
+  border-radius: 30px;
+  background-color: white;
+  color: black;
+  z-index: 1;
+}
+
+.infoBtn {
+  margin-left: -10%;
+  margin-top: -50px;
+  text-align: center;
+  width: 110px;
+  height: 45px;
+  border-radius: 30px;
+  background-color: white;
+  color: black;
+  z-index: 1;
+}
+
+.project {
+  margin-left: 25%;
   margin-top: -50px;
   text-align: center;
   width: 110px;
@@ -109,7 +119,7 @@ header {
 }
 
 .myProjects {
-  padding-top: 40px;
+  padding-top: 10px;
   font-size: 40px;
 }
 
@@ -152,7 +162,10 @@ header {
 }
 
 .button {
-  margin-top: -80px;
+  padding-left: 1050px;
+  display: grid;
+  gap: px;
+  margin-top: -50px;
 }
 
 .role {
