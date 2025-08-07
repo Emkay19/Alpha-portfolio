@@ -1,33 +1,59 @@
 <template>
 
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Orbitron&display=swap" rel="stylesheet">
+
+
   <header>
+    <h1 class="heading">My Portfolio</h1>
 
-    <div class="info">
-      <h1 class="name">Sinethemba Mkhoma</h1>
-      <h2 class="role">ICT Student</h2>
+    <div class="buttons">
+      <a href="" class="contact">Contact</a>
+      <a href="" class="project">Projects</a>
+      <a href="" class="infoBtn">Info</a>
     </div>
-
-    <div class="button">
-      <Button class="contact">Contact</Button>
-      <Button class="project">Projects</Button>
-      <Button class="infoBtn">Info</Button>
-    </div>
-
   </header>
 
   <div class="body">
 
+
     <div class="portfolio">
-      <h1>My Portfolio</h1>
+      <div class="myInfo">
+        <img :src="profileImage" alt="Profile image" class="profile-image" />
+
+        <div class="text-content">
+          <h3 class="greeting">Hi, I'm</h3>
+          <h1 class="name">Sinethemba Mkhoma</h1>
+          <h2 class="role">ICT Student</h2>
+
+          <div class="icons">
+            <a href="https://github.com/yourusername" target="_blank">
+              <img src="@/assets/github.png" alt="GitHub" class="icon" />
+            </a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank">
+              <img src="@/assets/linkedin.png" alt="LinkedIn" class="icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottomBtns">
+      <Button class="resume">Resume</Button>
+      <Button class="contactInfo">Contact Info</Button>
     </div>
 
   </div>
 
-
 </template>
 
 <script>
-
+export default {
+  data() {
+    return {
+      profileImage: require('@/assets/profile.jpg')
+    };
+  }
+};
 </script>
 
 <style>
@@ -36,75 +62,129 @@ html {
 }
 
 .body {
-  background-image: url("/public/bgImage.jpg");
+  background-image: url("/public/bgImage.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 600px;
+  height: 544px;
   z-index: 0;
+  width: 100%;
   border-radius: 40px;
   padding-top: 30px;
 }
 
 header {
+  position: relative;
   padding-top: 20px;
   background: linear-gradient(to bottom, rgba(22, 22, 22, 0.937), rgba(209, 205, 196));
   backdrop-filter: blur(50%);
   margin-top: -50px;
   margin-left: -8px;
-  height: 200px;
-  width: 1536px;
+  height: 170px;
+  width: 100%;
   color: white;
+}
+
+.heading {
+  letter-spacing: 2px;
+  font-family: 'Obitron';
+  font-size: 40px;
+  margin-top: 70px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+
+.myInfo {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 70px;
 }
 
 .portfolio {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bolder;
+  margin-top: 30px;
 }
 
-.contact {
-  margin-left: 60%;
-  margin-top: -50px;
-  text-align: center;
-  width: 110px;
-  height: 45px;
-  border-radius: 30px;
-  background-color: white;
-  color: black;
-  z-index: 1;
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.infoBtn {
-  margin-left: -10%;
-  margin-top: -50px;
-  text-align: center;
-  width: 110px;
-  height: 45px;
-  border-radius: 30px;
-  background-color: white;
-  color: black;
-  z-index: 1;
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.project {
-  margin-left: 25%;
-  margin-top: -50px;
-  text-align: center;
-  width: 110px;
-  height: 45px;
+.greeting {
+  font-size: 20px;
+  margin: 0;
+}
+
+.name {
+  font-size: 35px;
+  margin: 5px 0;
+}
+
+.role {
+  font-size: 25px;
+  margin-top: 5px;
+}
+
+.icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+
+.buttons {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+
+.buttons a {
+  margin-top: 60px;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
   border-radius: 30px;
-  background-color: white;
-  color: black;
-  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+.buttons a:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .projects {
-  padding-top: -10px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.422);
-  color: black;
   width: 40%;
   height: 350px;
   border-radius: 70px;
@@ -115,7 +195,6 @@ header {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
-
 }
 
 .myProjects {
@@ -127,7 +206,6 @@ header {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   padding-top: 10px;
@@ -150,33 +228,58 @@ header {
   font-size: 20px;
 }
 
-.name {
-  font-size: 40px;
-  margin-top: -20px;
-  margin-left: 10px;
-  color: white;
-}
-
 .info {
   margin-top: 50px;
 }
 
-.button {
-  padding-left: 1050px;
-  display: grid;
-  gap: px;
-  margin-top: -50px;
-}
-
-.role {
-  font-size: 25px;
-  text-align: left;
-  margin-left: 10px;
-  color: white;
-  margin-top: 0;
-}
-
 .content {
   margin-top: 10px;
+}
+
+
+.bottomBtns {
+  justify-content: center;
+  text-align: center;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+  margin-left: 110px;
+  color: white;
+  padding: 10px 20px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+.resume {
+  background-color: rgba(77, 77, 77, 0.614);
+  font-size: 16px;
+  border-radius: 30px;
+  color: white;
+  width: 110px;
+  height: 40px;
+}
+
+.contactInfo {
+  background-color: rgba(77, 77, 77, 0.614);
+  font-size: 16px;
+  border-radius: 30px;
+  color: white;
+  width: 110px;
+  height: 40px;
+}
+
+.contactInfo:hover {
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.resume:hover {
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+  transform: translateY(-5px);
+  background-color: rgba(172, 172, 172, 0.2);
 }
 </style>
